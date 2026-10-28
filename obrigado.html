@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recebemos seu pedido | LZDesign</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #2230d8;
+    --azul-escuro: #161fa0;
+    --branco: #ffffff;
+    --gelo: #e8ecff;
+    --verde: #25d366;
+    --verde-escuro: #128c4a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--azul);
+    background-image:
+      radial-gradient(circle at 90% 8%, rgba(255,255,255,.14) 0, rgba(255,255,255,0) 38%),
+      radial-gradient(circle at 5% 95%, var(--azul-escuro) 0, rgba(22,31,160,0) 45%);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+  }
+  .marca {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -.02em;
+  }
+  .marca span { font-weight: 400; opacity: .8; }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 0;
+  }
+  .selo {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background: var(--branco);
+    display: grid;
+    place-items: center;
+    margin-bottom: 32px;
+    box-shadow: 0 0 0 12px rgba(255,255,255,.14), 0 0 0 28px rgba(255,255,255,.07);
+    animation: pop .6s cubic-bezier(.2,1.4,.4,1) both;
+  }
+  .selo svg { width: 56px; height: 56px; }
+  .selo path {
+    fill: none;
+    stroke: var(--azul);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: tracar .5s .45s ease-out forwards;
+  }
+  @keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes tracar { to { stroke-dashoffset: 0; } }
+  h1 {
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: 16px;
+  }
+  p.texto {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--gelo);
+    max-width: 30ch;
+    margin-bottom: 36px;
+  }
+  .botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 360px;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 24px;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn:focus-visible { outline: 3px solid var(--branco); outline-offset: 3px; }
+  .btn-zap { background: var(--verde); color: #04301a; }
+  .btn-zap:hover { background: #3be07c; }
+  .btn-zap svg { width: 24px; height: 24px; fill: currentColor; }
+  .btn-voltar { background: transparent; color: var(--branco); border: 2px solid rgba(255,255,255,.45); }
+  .btn-voltar:hover { background: rgba(255,255,255,.1); }
+  footer { text-align: center; font-size: .9rem; color: var(--gelo); opacity: .8; }
+  @media (prefers-reduced-motion: reduce) {
+    .selo, .selo path { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="marca">LZ<span>Design</span></div>
+
+  <main>
+    <div class="selo" aria-hidden="true">
+      <svg viewBox="0 0 56 56"><path d="M12 29 L24 40 L44 16"/></svg>
+    </div>
+    <h1>Recebemos seu pedido!</h1>
+    <p class="texto">Obrigado pelo contato. Já vou olhar o que você precisa e te respondo em breve.</p>
+
+    <div class="botoes">
+      <a class="btn btn-zap" href="https://wa.me/5513997070628?text=Oi%2C%20acabei%20de%20pedir%20um%20or%C3%A7amento%20no%20site%20da%20LZDesign." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.12.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28-.25-.13-1.47-.73-1.7-.82-.22-.08-.39-.12-.56.12-.17.25-.64.82-.78.98-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48z"/></svg>
+        Falar no WhatsApp
+      </a>
+      <a class="btn btn-voltar" href="/">Voltar ao site</a>
+    </div>
+  </main>
+
+  <footer>LZDesign · Lojas virtuais e sites profissionais</footer>
+</body>
+</html>
